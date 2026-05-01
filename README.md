@@ -4,6 +4,12 @@ Yazılım geliştirme öğrenme sürecimde yaptığım **deneme portfolyo projes
 
 ---
 
+## 🌐 Canlı Demo
+
+[https://symkllci.github.io/WebCraft-Bootcamp-Portfolyo-HTML-CSS](https://symkllci.github.io/WebCraft-Bootcamp-Portfolyo-HTML-CSS)
+
+---
+
 ## 💡 Neden Yaptım?
 
 - HTML & CSS bilgimi pekiştirmek
@@ -25,6 +31,8 @@ portfolio/
 ├── screenshot1.png    # Site önizleme görseli 2
 ├── screenshot2.png    # Site önizleme görseli 3
 └── README.md          # Proje açıklaması
+```
+
 ---
 
 ## ✨ Neler Var?
@@ -42,7 +50,7 @@ portfolio/
 ## 🛠️ Kullanılan Teknolojiler
 
 | Teknoloji | Ne İşe Yaradı? |
-|-----------|---------------|
+|-----------|----------------|
 | HTML5 | Sayfa yapısı |
 | CSS3 | Tasarım, Flexbox, Grid, animasyonlar |
 | — | Harici kütüphane yok, framework yok |
@@ -80,13 +88,11 @@ portfolio/
 
 ---
 
-
 ## 📸 Önizleme
 
 ![Önizleme](screenshot.png)
 ![Önizleme2](screenshot1.png)
 ![Önizleme3](screenshot2.png)
-
 
 ---
 
