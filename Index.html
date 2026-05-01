@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şeyma Kelleci — Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(1100px 600px at 12% 12%, rgba(251, 146, 60, 0.32), transparent 60%),
+                radial-gradient(900px 520px at 88% 18%, rgba(245, 158, 11, 0.28), transparent 55%),
+                radial-gradient(700px 400px at 50% 90%, rgba(239, 68, 68, 0.18), transparent 60%),
+                linear-gradient(180deg, #fff7ed, #fef3c7);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .wrap {
+            width: min(1060px, 100%);
+            margin: 0 auto;
+            padding: 22px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 14px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            border: 1px solid rgba(251, 146, 60, .22);
+            background: rgba(255, 255, 255, .65);
+            border-radius: 18px;
+            padding: 10px 12px;
+            box-shadow: 0 18px 50px rgba(251, 146, 60, .12);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            letter-spacing: .2px;
+        }
+
+        .logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            background: conic-gradient(from 180deg at 50% 50%, #f97316, #f59e0b, #ef4444, #fb923c, #f97316);
+        }
+
+        nav a {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 10px;
+            border-radius: 12px;
+            opacity: 0.85;
+        }
+
+        nav a:hover {
+            background: rgba(251, 146, 60, 0.15);
+            box-shadow: 0 8px 16px rgba(251, 146, 60, .12);
+            opacity: 1;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+            margin-top: 14px;
+            align-items: stretch;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .75);
+            border: 1px solid rgba(251, 146, 60, .18);
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 18px 50px rgba(251, 146, 60, .10);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .hero .left {
+            padding: 22px;
+        }
+
+        .kicker {
+            display: inline-flex;
+            gap: 8px;
+            align-self: flex-start;
+            align-items: center;
+            padding: 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(251, 146, 60, .22);
+            background: rgba(255, 255, 255, .65);
+            font-size: 12.5px;
+            font-weight: 800;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(251, 146, 60, .22);
+            background: rgba(255, 255, 255, .65);
+            box-shadow: 0 8px 16px rgba(251, 146, 60, .10);
+            font-weight: 700;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(251, 146, 60, .20);
+        }
+
+        .chip {
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(251, 146, 60, .22);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero .right {
+            position: relative;
+        }
+
+        .profile {
+            display: grid;
+            gap: 14px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 18px;
+            background: conic-gradient(from 180deg at 50% 50%, #f97316, #f59e0b, #ef4444, #fb923c, #f97316);
+        }
+
+        .name {
+            display: grid;
+            gap: 8px;
+        }
+
+        .name b {
+            font-size: 18px;
+        }
+
+        .name span {
+            font-size: 13px;
+            color: rgba(2, 6, 23, .36);
+        }
+
+        .quick {
+            display: grid;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 18px;
+            border: 1px solid rgba(251, 146, 60, .18);
+            background: rgba(255, 255, 255, .65);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .row small {
+            color: rgba(2, 6, 23, .45);
+        }
+
+        .row strong {
+            font-weight: 800;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .proj {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 200px;
+        }
+
+        .thum {
+            height: 86px;
+            border-radius: 16px;
+            background:
+                radial-gradient(600px 400px at 20% 20%, rgba(251, 146, 60, 0.22), transparent 60%),
+                radial-gradient(400px 300px at 80% 30%, rgba(245, 158, 11, 0.22), transparent 55%),
+                linear-gradient(180deg, #ffffff, #fff7ed);
+            border: 1px solid rgba(251, 146, 60, .12);
+        }
+
+        .proj h3 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .proj p {
+            margin: 0;
+            font-size: 13px;
+            color: rgba(2, 6, 23, .6);
+            line-height: 1.4;
+        }
+
+        .meta {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(251, 146, 60, .22);
+            background: rgba(255, 255, 255, .65);
+        }
+
+        .section-title {
+            margin: 40px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+
+        .item {
+            padding: 16px;
+            display: grid;
+            gap: 8px;
+        }
+
+        .item b {
+            font-size: 16px;
+        }
+
+        .item span {
+            font-size: 13px;
+            color: rgba(2, 6, 23, .45);
+        }
+
+        .item p {
+            margin: 0;
+            font-size: 14px;
+            color: rgba(2, 6, 23, .6);
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .lefty {
+            display: grid;
+            gap: 8px;
+        }
+
+        .cta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        section {
+            margin-top: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="wrap">
+        <div class="nav">
+            <div class="brand">
+                <div class="logo"></div>
+                <div>Şeyma Kelleci</div>
+            </div>
+            <nav>
+                <a href="#projeler">Projeler</a>
+                <a href="#deneyim">Deneyim</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
+            <a href="cv.pdf" download="Seyma_Kelleci_CV" class="btn">CV İndir</a>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="hero">
+            <div class="card left">
+                <div class="kicker"><span>Full-Stack Developer • ASP.NET Core MVC odaklı</span></div>
+                <h1>Temiz kod,<br>güçlü backend.</h1>
+                <p>Ben <b>Şeyma Kelleci.</b> ASP.NET Core MVC ile web uygulamaları, RESTful API'ler ve yönetim panelleri geliştiriyorum. Freelance olarak çalışıyor, müşteri odaklı projeler üretiyorum.</p>
+                <div class="cta">
+                    <a href="#projeler" class="btn">Projeleri İncele</a>
+                    <a href="#iletisim" class="btn">İletişime Geç</a>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <span class="chip">ASP.NET Core</span>
+                    <span class="chip">C#</span>
+                    <span class="chip">MVC</span>
+                    <span class="chip">MSSQL</span>
+                    <span class="chip">HTML/CSS</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">Git</span>
+                </div>
+            </div>
+            <aside class="card right">
+                <div class="profile">
+                    <div class="avatar"></div>
+                    <div class="name">
+                        <b>Şeyma Kelleci</b>
+                        <span>Full-Stack Developer • Türkiye</span>
+                    </div>
+                    <div class="quick">
+                        <div class="row"><small>Uzmanlık</small><strong>ASP.NET Core MVC & API</strong></div>
+                        <div class="row"><small>Odak</small><strong>Performans</strong></div>
+                        <div class="row"><small>Çalışma şekli</small><strong>Freelance/Full Time</strong></div>
+                        <div class="row"><small>Durum</small><strong>Proje kabul ediyorum</strong></div>
+                    </div>
+                    <div class="cta">
+                        <a href="https://github.com/symkllci" target="_blank" class="btn">GitHub</a>
+                        <a href="https://www.linkedin.com/in/şeyma-k-411530249" target="_blank" class="btn">LinkedIn</a>
+                        <a href="https://www.instagram.com/sheymacodding" target="_blank" class="btn">Instagram</a>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section id="projeler">
+            <div class="section-title">
+                <h2>Projeler</h2>
+                <p>Seçilmiş çalışmalar • kısa özet</p>
+            </div>
+            <div class="grid">
+                <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>GO OZET GROUP — VIP Transfer</h3>
+                    <p>ASP.NET Core 8 ile geliştirilmiş kurumsal web sitesi. Çoklu dil desteği ve WhatsApp entegreli rezervasyon formu.</p>
+                    <div class="meta">
+                        <span class="tag">ASP.NET Core 8</span>
+                        <span class="tag">MVC</span>
+                        <span class="tag">Bootstrap 5</span>
+                    </div>
+                </article>
+
+                <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>Eğitim Koçluğu Platformu</h3>
+                    <p>Sınavlara yönelik çok sayfalı site + admin panel. TR/EN dil desteği ile kapsamlı yönetim.</p>
+                    <div class="meta">
+                        <span class="tag">ASP.NET Core 10</span>
+                        <span class="tag">MSSQL</span>
+                    </div>
+                </article>
+
+                <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>Blog Uygulaması</h3>
+                    <p>Node.js ve React mimarisiyle JWT tabanlı güvenli oturum yönetimi içeren fullstack sistem.</p>
+                    <div class="meta">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                </article>
+
+                <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>Mini Quiz</h3>
+                    <p>JavaScript temellerini test eden, localStorage ile ilerleme kaydeden interaktif uygulama.</p>
+                    <div class="meta">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </article>
+                
+                <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>Mini Ürün Kataloğu</h3>
+                    <p>React Context API ve Router ile optimize edilmiş ürün yönetim sistemi.</p>
+                    <div class="meta">
+                        <span class="tag">React</span>
+                        <span class="tag">Context API</span>
+                        <span class="tag">Vite</span>
+                    </div>
+                </article>
+
+                <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>Kişisel Portfolyo Sitesi</h3>
+                    <p>Flexbox ve Grid yapılarıyla kurgulanmış, tamamen responsive saf HTML/CSS çalışmam.</p>
+                    <div class="meta">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Grid</span>
+                    </div>
+                </article>
+
+                 <article class="card proj">
+                    <div class="thum"></div>
+                    <h3>Kişisel Portfolyo Sitesi 2</h3>
+                    <p>ASP.NET Core MVC ile geliştirilmiş, modern ve tam uyumlu profesyonel portfolyo.
+
+Modern & Şık (Hero Bölümü İçin)</p>
+                    <div class="meta">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Modern CSS efektleri</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="deneyim">
+            <div class="section-title">
+                <h2>Deneyim & Eğitim</h2>
+                <p>Özet zaman çizgisi</p>
+            </div>
+            <div class="timeline">
+                <div class="card item">
+                    <b>Freelance & Software Developer</b>
+                    <span>2025 — Günümüz</span>
+                    <p>Müşteri odaklı ASP.NET Core MVC ile web uygulamaları ve yönetim panelleri geliştiriyorum.</p>
+                </div>
+
+                <div class="card item">
+                    <b>Atatürk Üniversitesi & Web Tasarımı ve Kodlama</b>
+                    <span>2025 — 2027 • Devam Ediyor</span>
+                    <p>Modern web arayüzleri ve güncel kodlama standartları üzerine ileri düzey eğitim.</p>
+                </div>
+
+                <div class="card item">
+                    <b>Tokat Gaziosmanpaşa Üniversitesi & Bilgisayar Programcılığı</b>
+                    <span>2022 — 2024 • Mezun</span>
+                    <p>Algoritma temelleri, veritabanı yönetimi ve nesne yönelimli programlama eğitimi.</p>
+                </div>
+
+                <div class="card item">
+                    <b>ERC Mühendislik & Yazılım Stajyeri</b>
+                    <span>2023 • Ankara</span>
+                    <p>Kurumsal yazılım süreçleri ve backend mimarileri üzerine pratik iş deneyimi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="iletisim">
+            <div class="section-title">
+                <h2>İletişim</h2>
+                <p>Hızlı ulaşım</p>
+            </div>
+            <div class="card contact">
+                <div class="lefty">
+                    <b>Bir proje konuşalım.</b>
+                    <span>E-posta ve sosyal hesaplar üzerinden ulaşabilirsin.</span>
+                </div>
+                <div class="cta">
+                    <a href="mailto:seyma.kelleci@gmail.com" class="btn">Mail At</a>
+                    <a href="https://www.linkedin.com/in/şeyma-k-411530249" target="_blank" class="btn">LinkedIn</a>
+                    <a href="https://github.com/symkllci" target="_blank" class="btn">GitHub</a>
+                    <a href="https://www.instagram.com/sheymacodding" target="_blank" class="btn">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
