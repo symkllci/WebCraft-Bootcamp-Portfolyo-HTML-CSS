@@ -1,6 +1,6 @@
 # 🧑‍💻 Şeyma Kelleci — Kişisel Portfolyo Sitesi
 
-Yazılım geliştirme öğrenme sürecimde yaptığım **deneme portfolyo projesi**. Saf HTML & CSS kullanarak kendimi tanıtan, projelerimi ve deneyimlerimi listeleyen basit bir kişisel site. Herhangi bir framework ya da kütüphane kullanmadan, temel web teknolojileriyle neler yapılabileceğini görmek için oluşturdum.
+Yazılım geliştirme öğrenme sürecimde yaptığım **deneme portfolyo projesi**. HTML & CSS kullanarak kendimi tanıtan, projelerimi ve deneyimlerimi listeleyen basit bir kişisel site. Herhangi bir framework ya da kütüphane kullanmadan, temel web teknolojileriyle neler yapılabileceğini görmek için oluşturdum.
 
 ---
 
